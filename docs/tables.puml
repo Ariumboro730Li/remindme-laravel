@@ -1,0 +1,25 @@
+@startuml
+
+entity reminders {
+    * id <<PK>>
+    * user_id <<FK>>
+    ---
+    * title string 
+    * description string
+    * remind_at timestamp
+    * event_at timestamp
+    ---
+    * created_at timestamp
+    * updated_at timestamp
+}
+
+entity users {
+    * id <<PK>>
+    * email
+    * password
+}
+
+users "1" --> " * " reminders : has many
+
+
+@enduml
